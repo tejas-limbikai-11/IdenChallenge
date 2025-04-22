@@ -19,7 +19,7 @@ def load_or_login(playwright):
 
     if os.path.exists(SESSION_PATH):
         context = browser.new_context(storage_state=SESSION_PATH)
-        print("✅ Session loaded")
+        print("Session loaded")
     else:
         context = browser.new_context()
         page = context.new_page()
@@ -31,7 +31,7 @@ def load_or_login(playwright):
         page.wait_for_url("**/dashboard", timeout=10000)
 
         save_storage(context)
-        print("🔐 Logged in and session saved")
+        print("Logged in and session saved")
 
     return context
 
